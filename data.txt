@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato"
+      rel="stylesheet"
+    />
+    <link href="css/nav.css" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  </head>
+  <body>
+    <div id="vue-app">
+      <div class="container-fluid main_body">
+        <div class="row">
+          <div class="row nav">
+            <ul class="nav-ul" id="nav-ul">
+              <li class="nav-li nav_option1">
+                <a href="" id="option1">Home</a>
+              </li>
+              <li class="nav-li nav_option1">
+                <a href="" id="option2">Options</a>
+              </li>
+              <li class="nav-li nav_option1">
+                <a href="" id="option3">Contact</a>
+              </li>
+              <li class="nav-li nav_option1">
+                <a href="" id="option4">About</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row d-flex justify-content-center part1">
+          <div class="row bannerPage">
+            <h1 class="profileName">Shahinul Hoque</h1>
+          </div>
+          <div class="row profileImage">
+            <img src="images/myPhoto2.png" />
+          </div>
+        </div>
+
+        <div class="row part2">
+          <div class="row d-flex justify-content-center contentBio">
+            <h1 class="paraTitle">Introduction</h1>
+            <p>
+              I recently completed my Bachelor from Brac University (Bangladesh)
+              majoring in Computer Scince & Engineering. I love to code, develop
+              new programs and work with data. Most of my recent time is spent
+              infront of a display. I like to explore new places. Though my city
+              doesn't have alot of those. My hobby is mostly hardware projects.
+              Nothing fancy! Some automated cars, fixing one or two quadcopters,
+              maybe some home automation stuff! That's it. And yes, I like to
+              fly quadcopters. Who doesn't?
+            </p>
+          </div>
+        </div>
+        <div class="row part3">
+          <div class="row d-flex justify-content-left contentBio">
+            <h1 class="paraTitle">Research Experience</h1>
+            <ul>
+              <li>
+                Learning from Tweets: Opportunities and Challenges to Inform
+                Policy Making During Dengue Epidemic
+              </li>
+              <li>
+                Secure Blockchain-based Categorical Information Transaction and
+                Depository Framework with Identification Enabled Privacy and
+                Decentralized System
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row part4">
+          <div class="row d-flex justify-content-left contentBio">
+            <h1 class="paraTitle">Programming Languages</h1>
+            <div class="row contentLanguage">
+              <ul>
+                <li><img src="images/check-square.svg">Python</li>
+                <li><img src="images/check-square.svg">Java</li>
+                <li><img src="images/check-square.svg">PHP</li>
+                <li><img src="images/check-square.svg">JavaScript</li>
+                <li><img src="images/check-square.svg">HTML</li>
+                <li><img src="images/check-square.svg">CSS</li>
+                <li><img src="images/check-square.svg">SQL</li>
+              </ul>
+            </div>
+            <h1 class="paraTitle">Framework and Libraries</h1>
+            <div class="row contentLanguage">
+              <ul>
+                <li><img src="images/check-square.svg">VueJS</li>
+                <li><img src="images/check-square.svg">Django</li>
+                <li><img src="images/check-square.svg">Laravel</li>
+                <li><img src="images/check-square.svg">NodeJS</li>
+                <li><img src="images/check-square.svg">ExpressJS</li>
+                <li><img src="images/check-square.svg">Socket</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="row part5">
+          <div class="row d-flex justify-content-left contentBio">
+            <h1 class="paraTitle">Skills</h1>
+            
+            
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/vue.js"></script>
+    <script></script>
+  </body>
+</html>
