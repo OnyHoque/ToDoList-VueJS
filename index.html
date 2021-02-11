@@ -19,55 +19,96 @@
   </head>
   <body>
     <div id="vue-app">
-      <div id="vue-app">
-        <div class="container">
-          <div class="row">
-            <div class="col">
-              <div class="row">
-                <h3>Enter Task details</h3>
-              </div>
-              <div class="row">
-                <input v-model="taskName" placeholder="Enter task" />
-              </div>
-              <div class="row">
-                <input
-                  v-model="taskDeadline"
-                  placeholder="Enter task deadline"
-                />
-              </div>
-              <div class="row">
-                <input type="checkbox" id="checkbox" v-model="option1" @change="check1($event)"/>
-                <label for="checkbox">Important</label>
-              </div>
-              <div class="row">
-                <input type="checkbox" id="checkbox" v-model="option2" @change="check2($event)"/>
-                <label for="checkbox">Regular</label>
-              </div>
-              <div class="row">
-                <input type="checkbox" id="checkbox" v-model="option3" @change="check3($event)"/>
-                <label for="checkbox" >Not important</label>
-              </div>
-              <div class="row">
-                <button v-on:click="addTask">Add task</button>
-              </div>
-              <div class="row">
-                <button v-on:click="addClass">Add task</button>
-              </div>
+      <div class="container">
+        <div class="row">
+          <div class="col input-column">
+            <div class="row justify-content-center">
+              <h3>Enter Task details</h3>
             </div>
-            <div class="col">
-              <ul>
-                <li v-for="task in tasks">
+            <div class="row text-input">
+              <input v-model="taskName" placeholder="Enter task" />
+            </div>
+            <div class="row text-input">
+              <input v-model="taskDeadline" placeholder="Enter task deadline" />
+            </div>
+            <div class="row checkbox-input">
+              <input
+                type="checkbox"
+                id="checkbox"
+                v-model="option1"
+                @change="check1($event)"
+              />
+              <label for="checkbox">Important</label>
+            </div>
+            <div class="row checkbox-input">
+              <input
+                type="checkbox"
+                id="checkbox"
+                v-model="option2"
+                @change="check2($event)"
+              />
+              <label for="checkbox">Regular</label>
+            </div>
+            <div class="row checkbox-input">
+              <input
+                type="checkbox"
+                id="checkbox"
+                v-model="option3"
+                @change="check3($event)"
+              />
+              <label for="checkbox">Not important</label>
+            </div>
+            <div class="row justify-content-center">
+              <button v-on:click="addTask">Add task</button>
+            </div>
+            <div class="row justify-content-center">
+              <button v-on:click="addClass">Add task</button>
+            </div>
+          </div>
+          <div class="col output-column">
+            <div class="row"><h3>Incomplete</h3></div>
+            <ul>
+              <li v-for="task in tasks" class="incomplete_li">
+                <div class="row">
                   <div class="col">
                     <div class="row">
                       <h5>{{task.name}}</h5>
                     </div>
                     <div class="row">
-                      <p>{{task.importance}}</p>
+                      <p>{{task.note}}</p>
                     </div>
                   </div>
-                </li>
-              </ul>
-            </div>
+                  <div class="col">
+                    <button v-on:click="deleteTask(task.id);">
+                      <img class="img1" src="x-square.svg" />
+                    </button>
+                    <button v-on:click="completeTask(task.id);">
+                      <img class="img2" src="check-square.svg" />
+                    </button>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="row"><h3>Completed</h3></div>
+            <ul>
+              <li v-for="task_complete in tasks_complete" class="complete_li">
+                <div class="row">
+                  <div class="col">
+                    <div class="row">
+                      <h5>{{task_complete.name}}</h5>
+                    </div>
+                    <div class="row">
+                      <p>{{task_complete.note}}</p>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <button v-on:click="deleteCompleteTask(task_complete.id);">
+                      <img class="img1" src="x-square.svg" />
+                    </button>
+                  </div>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

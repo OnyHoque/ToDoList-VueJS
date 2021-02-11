@@ -9,7 +9,14 @@ const app = {
       option1: false,
       option2: false,
       option3: false,
-      tasks: [],
+      tasks: [
+        { name: "Task 1", note: "No Note", classType: "green", id: 0},
+        { name: "Task 2", note: "No Note", classType: "orange", id: 1},
+        { name: "Task 3", note: "No Note", classType: "red", id: 2},
+      ],
+      tasks_complete: [
+
+      ],
     };
   },
   methods: {
@@ -24,22 +31,32 @@ const app = {
       }
       this.tasks.push({
         name: this.taskName,
-        importance: this.taskDeadline,
-        classtype: classValue,
+        note: this.taskDeadline,
+        classType: classValue,
+        id: this.tasks.length,
       });
 
-      this.taskName = "";
-      this.taskDeadline = "";
-      this.option1 = false;
-      this.option2 = false;
-      this.option3 = false;
+      // this.taskName = "";
+      // this.taskDeadline = "";
+      // this.option1 = false;
+      // this.option2 = false;
+      // this.option3 = false;
       this.addClass();
     },
     addClass() {
-      var list = document.getElementsByTagName("li");
+      var list = document.getElementsByClassName("incomplete_li");
       for (var i = 0; i < list.length; i++) {
         var task = this.tasks[i];
-        list[i].classList.add(task.classtype);
+        console.log("id: "+task.id+"  color: "+task.classType);
+        list[i].classList.add( task.classType );
+      }
+    },
+    addCompleteClass(){
+      var list = document.getElementsByClassName("complete_li");
+      for (var i = 0; i < list.length; i++) {
+        var task = this.tasks_complete[i];
+        console.log("id: "+task.id+"  color: "+task.classType);
+        list[i].classList.add( task.classType );
       }
     },
     check1(e) {
@@ -53,6 +70,27 @@ const app = {
     check3(e) {
       this.option1 = false;
       this.option2 = false;
+    },
+    deleteTask(j){
+      this.tasks.splice(j,1);
+      for(var i = 0; i < this.tasks.length; ++i){
+        this.tasks[i].id = i;
+      }
+    },
+    deleteCompleteTask(j){
+      this.tasks_complete.splice(j,1);
+      for(var i = 0; i < this.tasks_complete.length; ++i){
+        this.tasks_complete[i].id = i;
+      }
+    },
+    completeTask(j){
+      var task = this.tasks[j];
+      this.tasks.splice(j,1);
+      this.tasks_complete.push(task);
+      for(var i = 0; i < this.tasks.length; ++i){
+        this.tasks[i].id = i;
+      }
+      this.addCompleteClass();
     },
   },
 };
