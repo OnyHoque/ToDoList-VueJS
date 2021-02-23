@@ -3,131 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Lato"
-      rel="stylesheet"
-    />
+    <title>ToDo</title>
+    <!-- Latest compiled and minified CSS -->
+
     <link href="style.css" rel="stylesheet" />
     <script src="https://unpkg.com/vue@next"></script>
   </head>
   <body>
-    <div id="vue-app">
-      <div class="container">
-        <div class="row">
-          <div class="col input-column">
-            <div class="row justify-content-center">
-              <h3>Enter Task details</h3>
-            </div>
-            <div class="row text-input">
-              <input v-model="taskName" placeholder="Enter task" />
-            </div>
-            <div class="row text-input">
-              <input v-model="taskDeadline" placeholder="Enter task deadline" />
-            </div>
-            <div class="row checkbox-input">
-              <input
-                type="checkbox"
-                id="checkbox"
-                v-model="option1"
-                @change="check1($event)"
-              />
-              <label for="checkbox">Important</label>
-            </div>
-            <div class="row checkbox-input">
-              <input
-                type="checkbox"
-                id="checkbox"
-                v-model="option2"
-                @change="check2($event)"
-              />
-              <label for="checkbox">Regular</label>
-            </div>
-            <div class="row checkbox-input">
-              <input
-                type="checkbox"
-                id="checkbox"
-                v-model="option3"
-                @change="check3($event)"
-              />
-              <label for="checkbox">Not important</label>
-            </div>
-            <div class="row justify-content-center">
-              <button v-on:click="addTask">Add task</button>
-            </div>
-            <div class="row justify-content-center">
-              <button v-on:click="addClass">Add task</button>
-            </div>
+    <div id="app">
+      <div>
+        <input
+          type="text"
+          class="todo-input"
+          placeholder="Enter your task"
+          v-model="newTodo"
+          @keyup.enter="addTask"
+        />
+        <div v-for="todo in todos" :key="todo.id" class="todo-item">
+          <div>
+            {{ todo.title }}
           </div>
-          <div class="col output-column">
-            <div class="row"><h3>Incomplete</h3></div>
-            <ul>
-              <li v-for="task in tasks" class="incomplete_li">
-                <div class="row">
-                  <div class="col">
-                    <div class="row">
-                      <h5>{{task.name}}</h5>
-                    </div>
-                    <div class="row">
-                      <p>{{task.note}}</p>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <button v-on:click="deleteTask(task.id);">
-                      <img class="img1" src="x-square.svg" />
-                    </button>
-                    <button v-on:click="completeTask(task.id);">
-                      <img class="img2" src="check-square.svg" />
-                    </button>
-                  </div>
-                </div>
-              </li>
-            </ul>
-            <div class="row"><h3>Completed</h3></div>
-            <ul>
-              <li v-for="task_complete in tasks_complete" class="complete_li">
-                <div class="row">
-                  <div class="col">
-                    <div class="row">
-                      <h5>{{task_complete.name}}</h5>
-                    </div>
-                    <div class="row">
-                      <p>{{task_complete.note}}</p>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <button v-on:click="deleteCompleteTask(task_complete.id);">
-                      <img class="img1" src="x-square.svg" />
-                    </button>
-                  </div>
-                </div>
-              </li>
-            </ul>
+          <div class="remove-item" @click="removeTodo(key)">
+            &times;
           </div>
         </div>
       </div>
     </div>
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-      crossorigin="anonymous"
-    ></script>
+
     <script src="app.js"></script>
   </body>
 </html>

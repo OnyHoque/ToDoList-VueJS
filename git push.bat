@@ -4,3 +4,4 @@ set mytime=%time%
 @echo on
 git add .
 git commit -m "%mydate%:%mytime%"
+git push -u origin main

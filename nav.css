@@ -1,0 +1,35 @@
+.nav{
+  position: absolute;
+  z-index: 5;
+  height: 110px;
+}
+
+.nav-ul {
+    list-style-type: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+  }
+  
+  .nav-li {
+    float: left;
+  }
+  
+  .nav-li a {
+    display: block;
+
+    color: #fafafa;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    border-right: solid 1px white;
+  }
+  
+  /* Change the link color to #111 (black) on hover */
+  .nav_option1:hover {
+    background-color: #0071e3;
+  }
